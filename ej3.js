@@ -23,3 +23,4 @@ function myFunction(array,target) {
 myFunction([2,4,3,6,9,8],10)
 
 //Desarrollado por: Luis Andrés Alvarez Silva
+//XD
