@@ -1,13 +1,25 @@
-function (array,target) {
+// ####################################
+// Ejercicio 3 con posible sustentacion
+// ####################################
+
+//Creacion de la funcion
+function myFunction(array,target) {
     let arreglo=[]
     let suma
-    for (i=0,i<=array.lenght, i++) {
-        for (y=0, y<=array.lenght, y++) {
-            numero=array[i]
-            if ((numero+array[y+1])==target){
-                arreglo[y]=[]
+    let numero
+    for (i=0;i<=array.length; i++) {
+        numero=array[i]
+        for (y=0; y<=array.length/3; y++) {
+            suma=numero+array[y]
+            if (suma==target){
+                arreglo[y]=[array[y],numero]
             }
         }
     }
+    //Resultado-Output
+    console.log(arreglo)
 }
-//array=[2,4,3,6,9,8]
+//Llamado de la funcion-Input
+myFunction([2,4,3,6,9,8],10)
+
+//Desarrollado por: Luis Andrés Alvarez Silva
