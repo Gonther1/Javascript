@@ -7,7 +7,7 @@ function myFunction(array,target) {
     let arreglo=[]
     let suma
     let numero
-    for (i=0;i<=array.length; i++) {
+    for (i=0;i<array.length; i++) {
         numero=array[i]
         for (y=0; y<=array.length/3; y++) {
             suma=numero+array[y]
@@ -23,4 +23,3 @@ function myFunction(array,target) {
 myFunction([2,4,3,6,9,8],10)
 
 //Desarrollado por: Luis Andrés Alvarez Silva
-//XD
