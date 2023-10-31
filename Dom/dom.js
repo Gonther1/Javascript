@@ -25,7 +25,93 @@ byId.style.color="white";
 
 let element=document.createElement("p")
 
-document.insertBefore(element,bo)
+element.textContent="Hola jajajaja";
+
+/* document.body.insertBefore(element,byId); */  // <- Pone a 'element' antes de byId 
+
+/* document.body.appendChild(element); */
+
+let vacio = document.querySelector(".empty");
+
+vacio.appendChild(element); 
 
 // Better form
 // document.querySelector("body").insertAdjacentHTML('beforeend','<p>Hola mundo</p>')
+
+// Local Storage <- JSON
+
+const mascota = {
+    nombre: 'Tony',
+    edad: '2 años',
+}
+
+//Guardamos la información y convertimos a string el objeto
+
+localStorage.setItem('xd', JSON.stringify(mascota));
+
+//Obtenemos el objeto del local storage y lo guardamos
+
+let mascotaGuardada = localStorage.getItem('xd');
+
+//Convertimos la información a un objeto nuevamente
+
+mascotaGuardada = JSON.parse(mascotaGuardada);
+
+console.log(localStorage);
+//Imprimir información
+
+console.log(`Nombre: ${mascotaGuardada.nombre}`);
+console.log(`Edad: ${mascotaGuardada.edad}`);
+
+/* localStorage.removeItem('xd');  */ // <- Nombre que puse en la cadena del setItem o nombre como almacene la info 
+
+
+// OBJETOS LITERALES
+
+let estudiante = {
+    nombre : "Andres",
+    edad: 17,
+}
+// De esta forma imprimimos un objeto con una llave estudiante y como valor tiene el diccionario anterior.
+console.log(
+    {
+        estudiante : estudiante
+    }
+);
+// Lo anterior lo podemos hacer tambien de esta manera, como la llave tiene el mismo nombre que el diccionario es posible hacer esto.
+console.log(
+    {
+        estudiante
+    }
+);
+
+// OPERADOR SPREAD 
+
+// Para clonar diccionarios 
+
+const carro = {
+    placa : 123456,
+    modelo: 2006
+}
+
+console.log("Carro normal: ",carro);
+
+let nuevoCarro = {...carro}
+
+console.log("Nuevo carro: ",nuevoCarro);
+
+// Desestructuracion - Forma avanzada
+
+let perro = {
+    nombre : "Brus",
+    patas : 4,
+    dueños : {
+        cantidad : 2
+    }
+}
+
+const { nombre, patas, dueños:{ cantidad }} = perro;
+
+console.log(nombre);
+console.log(patas);
+console.log(cantidad);
