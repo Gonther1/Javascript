@@ -115,3 +115,30 @@ const { nombre, patas, dueños:{ cantidad }} = perro;
 console.log(nombre);
 console.log(patas);
 console.log(cantidad);
+
+const encabezado = document.head;
+console.log(encabezado);    
+
+const domain = document.domain; // <- Domain es una palabra clave con la que podemos acceder al numero de localhost de la página
+console.log(domain);
+
+const uri = document.baseURI; // <- baseURI tambien es una palabra clave, con esta traemos el link(url) completo de nuestra page
+console.log(uri);
+
+const formularios = document.forms;
+console.log(formularios);
+
+const formHijos = document.forms[0]; // <- Imprime el primer formulario de la página
+console.log(formHijos);
+
+const labelito = document.forms[0].children[1]
+console.log(labelito);
+
+const inputcito = document.forms[0].children[0]
+console.log(inputcito);
+
+const placeHolder = document.forms[0].children[1].placeHolder
+console.log(placeHolder);
+
+const enlaces = document.links
+console.log(enlaces);
