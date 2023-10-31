@@ -30,11 +30,11 @@ let centroComercial = {
         negocio : "Venta de helados",
         empleados : {
             primero : {
-                nombre : "Juana",
+                nameJuana : "Juana",
                 edad : 20
             },
             segundo : {
-                nombre : "Carlos",
+                nameCarlos : "Carlos",
                 edad : 45,
                 mascotas : {
                     primero : {
@@ -48,15 +48,22 @@ let centroComercial = {
         }
     }
 }
-
-
 //Formas de desestructuracion de valores anidados
 
 // Primer manera
 const {name} = centroComercial.local1.empleados.segundo.mascotas.primero; 
 console.log(name);
 
-// Segunda forma
+// Segunda manera
 const {local1:{empleados:{segundo:{mascotas:{segundo:{nameCat}}}}}} =  centroComercial 
-
 console.log(nameCat);
+
+// Primera forma
+const {nameCarlos} = centroComercial.local1.empleados.segundo
+console.log(nameCarlos);
+
+// Segunda forma
+const {local1:{empleados:{primero:{nameJuana}}}} = centroComercial;
+console.log(nameJuana);
+
+
