@@ -1,13 +1,13 @@
-let byId=document.querySelector('#titulo-h1')
-let byClass=document.querySelector('.titulo-h2')
-let byTarget=document.querySelector('p')
+let byId = document.querySelector('#titulo-h1')
+let byClass = document.querySelector('.titulo-h2')
+let byTarget = document.querySelector('p')
 
 
 console.log(`Por Id: ${byId.textContent}\n\nPor Clase: ${byClass.textContent}\n\nPor etiqueta: ${byTarget.textContent}`)
 
 // querySelectorAll selecciona cualquier etiqueta que tenga aquello que se le especifica  
 
-let targetsWithClassGeneral=document.querySelectorAll('.general')
+let targetsWithClassGeneral = document.querySelectorAll('.general')
 
 targetsWithClassGeneral.forEach((elemento) => {
     console.log(elemento)
@@ -15,17 +15,17 @@ targetsWithClassGeneral.forEach((elemento) => {
 
 // Con .style podemos acceder al css desde javascript
 
-byId.style.backgroundColor="red";
+byId.style.backgroundColor = "red";
 
-byId.style.color="white";
+byId.style.color = "white";
 
 // Generar html desde javascript
 
 // Para crear una nueva etiqueta desde javascript
 
-let element=document.createElement("p")
+let element = document.createElement("p")
 
-element.textContent="Hola jajajaja";
+element.textContent = "Hola jajajaja";
 
 /* document.body.insertBefore(element,byId); */  // <- Pone a 'element' antes de byId 
 
@@ -33,7 +33,7 @@ element.textContent="Hola jajajaja";
 
 let vacio = document.querySelector(".empty");
 
-vacio.appendChild(element); 
+vacio.appendChild(element);
 
 // Better form
 // document.querySelector("body").insertAdjacentHTML('beforeend','<p>Hola mundo</p>')
@@ -69,13 +69,13 @@ console.log(`Edad: ${mascotaGuardada.edad}`);
 // OBJETOS LITERALES
 
 let estudiante = {
-    nombre : "Andres",
+    nombre: "Andres",
     edad: 17,
 }
 // De esta forma imprimimos un objeto con una llave estudiante y como valor tiene el diccionario anterior.
 console.log(
     {
-        estudiante : estudiante
+        estudiante: estudiante
     }
 );
 // Lo anterior lo podemos hacer tambien de esta manera, como la llave tiene el mismo nombre que el diccionario es posible hacer esto.
@@ -90,52 +90,60 @@ console.log(
 // Para clonar diccionarios 
 
 const carro = {
-    placa : 123456,
+    placa: 123456,
     modelo: 2006
 }
 
-console.log("Carro normal: ",carro);
+console.log("Carro normal: ", carro);
 
-let nuevoCarro = {...carro}
+let nuevoCarro = { ...carro }
 
-console.log("Nuevo carro: ",nuevoCarro);
+console.log("Nuevo carro: ", nuevoCarro);
 
 // Desestructuracion - Forma avanzada
 
 let perro = {
-    nombre : "Brus",
-    patas : 4,
-    dueños : {
-        cantidad : 2
+    nombre: "Brus",
+    patas: 4,
+    dueños: {
+        cantidad: 2
     }
 }
 
-const { nombre, patas, dueños:{ cantidad }} = perro;
+const { nombre, patas, dueños: { cantidad } } = perro;
 
 console.log(nombre);
 console.log(patas);
 console.log(cantidad);
 
+// PROMESAS
 
-promesa.then // <- Para promesas que se resolvio correctamente
+
+/* promesa.then // <- Para promesas que se resolvio correctamente
 
 promesa.catch // <- Promesa que no se resolvio correctamente
 
-promesa.finally // <- Cuando termina la compilacion de la promesa
-    
+promesa.finally */ // <- Cuando termina la compilacion de la promesa
+
 const aprobar = true;
+
 //Creamos la promesa
+
 const promesa = new Promise((resuelta, rechazada) => {
-setTimeout(() => {
-if (aprobar) {
-resuelta(); //resolver
-} else {
-rechazada(); //rechazar
-}
-}, 2000);
+    setTimeout(() => {
+        if (aprobar) {
+            resuelta(); // Si aprobar es true el program entra a esta seccion y la promesa se toma como realizada
+            /* console.log("Aprobada"); //resolver */
+        } else {
+            rechazada(); // Si aprobar es false el programa entra a esta seccion y la promesa se toma como rechazada
+            /* console.log("Desaprobada"); //rechazar */
+        }
+    }, 2000  // <- 2000 -> Dos segundos
+    );
 });
+
 //Estados de la promesa
 promesa
-.then(() => console.log("La promesa se cumplió"))
-.catch(() => console.log("La promesa no se cumplió"))
-.finally(() => console.log("La promesa finalizó"))
+    .then(() => console.log("La promesa se cumplió"))
+    .catch(() => console.log("La promesa no se cumplió"))
+    .finally(() => console.log("La promesa finalizó"))
