@@ -147,3 +147,22 @@ promesa
     .then(() => console.log("La promesa se cumplió"))
     .catch(() => console.log("La promesa no se cumplió"))
     .finally(() => console.log("La promesa finalizó"))
+
+// FETCH API  
+
+
+// Peticion Archivo de texto en mi proyecto
+
+fetch("../EjerciciosJS/ej6.js") // Seleccion archivo ej6.js
+.then((respuesta)=> respuesta.text() /*Si cumple */)
+.then((data)=> console.log(data))
+.catch(()=> console.log("Error"))
+.finally(()=> console.log("Peticion finalizada"))
+
+// Peticion Api Que genera usuarios random
+
+fetch("https://randomuser.me/api/?results=5") //Petición a la URL o ruta
+.then((respuesta) => respuesta.json())//Convertir a JSON
+.then((data) => console.log(data)) //Imprimir la información
+.catch(() => console.log("Error al traer la informacíon"))
+.finally(() => console.log("Petición finalizada"))
