@@ -161,11 +161,50 @@ fetch("../EjerciciosJS/ej6.js") // Seleccion archivo ej6.js
 
 // Peticion Api Que genera usuarios random
 
-fetch("https://64f202d20e1e60602d2490a1.mockapi.io/usuario") //Petición a la URL o ruta
+let obtener = async()=> {
+    let peticion = await fetch("https://64f202d20e1e60602d2490a1.mockapi.io/usuario");
+    let res = await peticion.json();
+    console.log(res);
+} 
+
+let enviar = async()=> {
+    let obj = {
+        "cedula": 1098650643,
+        "nombre": "XD",
+        "apellido": "xd",
+        "edad": 17,
+        "id": 999
+    };
+    let peticion = await fetch("https://64f202d20e1e60602d2490a1.mockapi.io/usuario",{
+        method:"POST",
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(obj)
+    });
+    let res= await peticion.json()
+    console.log(res)
+}
+
+let eliminar = async(id)=> {
+    let peticion = await fetch(`https://64f202d20e1e60602d2490a1.mockapi.io/usuario/${id}`,{
+        method:"DELETE",
+        headers: {'Content-Type':'application/json'},
+    });
+    let res= await peticion.json()
+    console.log(res)
+}
+await eliminar(21);   
+await eliminar(33);      
+
+/* enviar(); */
+
+/* obtener(); */
+
+
+/* fetch("https://64f202d20e1e60602d2490a1.mockapi.io/usuario") //Petición a la URL o ruta
 .then((respuesta) => respuesta.json())//Convertir a JSON
 .then((data) => console.log(data)) //Imprimir la información
 .catch(() => console.log("Error al traer la informacíon"))
-.finally(() => console.log("Petición finalizada"))
+.finally(() => console.log("Petición finalizada")) */
 
 // La funcion fetch() <- Permite traer informacion de la url indicada entre parentesis 
 
