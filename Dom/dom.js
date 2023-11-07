@@ -161,8 +161,13 @@ fetch("../EjerciciosJS/ej6.js") // Seleccion archivo ej6.js
 
 // Peticion Api Que genera usuarios random
 
-fetch("https://randomuser.me/api/?results=5") //Petición a la URL o ruta
+fetch("https://64f202d20e1e60602d2490a1.mockapi.io/usuario") //Petición a la URL o ruta
 .then((respuesta) => respuesta.json())//Convertir a JSON
 .then((data) => console.log(data)) //Imprimir la información
 .catch(() => console.log("Error al traer la informacíon"))
 .finally(() => console.log("Petición finalizada"))
+
+// La funcion fetch() <- Permite traer informacion de la url indicada entre parentesis 
+
+
+// async() y await() van de la mano, es decir para usar una de estas funciones es necesario usar la otra para que el codigo funcione
